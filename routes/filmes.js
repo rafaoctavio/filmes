@@ -13,6 +13,8 @@ router.post('/', FilmeController.guardar)
 
 router.get('/:id', FilmeController.edit)
 
-router.post('/:id', FilmeController.atualizar)
+router.put('/:id', FilmeController.atualizar)
+
+// router.delete()
 
 module.exports = router;
