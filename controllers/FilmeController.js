@@ -37,9 +37,6 @@ var FilmeController = {
     },
 
     home: async (req, res) => {
-        // Listar os produtos
-        // Receber os dados do banco
-        // Chamar a view e passar os dados que vieram do banco
         const result = await Filme.findAll();
         console.log(result);
         return res.render('filme/home', {result})
@@ -51,13 +48,9 @@ var FilmeController = {
     },
 
     guardar: async (req, res) => {
-        // Pegar os dados da requisição
-        // Jogar os dados no banco
-        // Redirecionar
         const dados = req.body;
         console.log("DADOS", dados);
         const result = await Filme.create(dados);
-
         return res.redirect('/filmes/');
     },
 
@@ -70,13 +63,9 @@ var FilmeController = {
 
     atualizar: async (req, res) => {
         const { id } = req.params;
-                // Pegar os dados da requisição
-        // Jogar os dados no banco
-        // Redirecionar
         const dados = req.body;
         console.log("DADOS", dados);
         const result = await Filme.update(dados, {where: {id}});
-
         return res.redirect('/filmes/');
     }
 }

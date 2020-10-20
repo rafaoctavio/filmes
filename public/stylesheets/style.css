@@ -1,8 +1,7 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-a {
-  color: #00B7FF;
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.5);
 }
