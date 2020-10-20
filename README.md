@@ -6,7 +6,7 @@
 
 ## Tecnologias Usadas
 
-HTML5, CSS3, Javascript, Bootstrap 4, Sass, NodeJS, ExpressJS, MySQL, Sequelize, 
+HTML5, CSS3, Javascript, Bootstrap 4, NodeJS, ExpressJS, MySQL, Sequelize, 
 
 ## Desenvolvimento
 
