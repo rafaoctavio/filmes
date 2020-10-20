@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>titulo</th>
+            <th>avaliação</th>
+            <th>genero</th>
+            <th>#</th>
+        </tr>
+        <% result.forEach((item) => { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.titulo %></td>
+                <td><%= item.avaliacao %></td>
+                <td><%= item.genero_id %></td>
+                <td>
+                    <a href="/filmes/<%= item.id %>">Editar</button>
+                    <button>DELETAR</button>
+                </td>
+            </tr>            
+        <% }) %>
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Edição de Filme</title>
+</head>
+<body>
+    <form action="/filmes?_method=PUT" method="POST">
+        <p>
+            <label>Título</label>
+            <input name="titulo" value="<%= filme.titulo %>" />
+        </p>
+        <p>
+            <label>Avaliação</label>
+            <input name="avaliacao" type="number" value="<%= filme.avaliacao %>" />
+        </p>
+        <p>
+            <label>Premios</label>
+            <input name="premios" type="number" value="<%= filme.premios %>" />
+        </p>
+        <p>
+            <label>Data Lançamento</label>
+            <input name="data_lancamento" type="date" value="<%= filme.data_lancamento %>" />
+        </p>
+        <p>
+            <label>Duração</label>
+            <input name="duracao" type="number" value="<%= filme.duracao %>" />
+        </p>
+        <p>
+            <label>Genero</label>
+            <select name="genre_id">
+                <option value="">Selecione uma opção...</option>
+                <% generos.forEach((genero) => { %>
+                    <option value="<% genero.id %>" <%= genero.id === filme.genero_id ? 'selected' : '' %>><%= genero.nome %></option>
+                <% }) %>
+            </select>
+        </p>
+        <p>
+            <button>Editar</button>
+        </p>
+    </form>
+</body>
+</html>

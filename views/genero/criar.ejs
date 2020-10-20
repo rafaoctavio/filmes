@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Novo Filme</title>
+</head>
+<body>
+    <form action="/filmes/" method="POST">
+        <p>
+            <label>Título</label>
+            <input name="titulo" />
+        </p>
+        <p>
+            <label>Avaliação</label>
+            <input name="avaliacao" type="number" />
+        </p>
+        <p>
+            <label>Premios</label>
+            <input name="premios" type="number" />
+        </p>
+        <p>
+            <label>Data Lançamento</label>
+            <input name="data_lancamento" type="datetime" />
+        </p>
+        <p>
+            <label>Duração</label>
+            <input name="duracao" type="number" />
+        </p>
+        <p>
+            <label>Genero</label>
+            <select name="genre_id">
+                <option value="">Selecione uma opção...</option>
+                <% generos.forEach((genero) => { %>
+                    <option value="<% genero.id %>"><%= genero.nome %></option>
+                <% }) %>
+            </select>
+        </p>
+        <p>
+            <button>Salvar</button>
+        </p>
+    </form>
+</body>
+</html>
