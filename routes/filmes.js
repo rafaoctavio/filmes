@@ -15,6 +15,6 @@ router.get('/:id', FilmeController.edit)
 
 router.put('/:id', FilmeController.atualizar)
 
-// router.delete()
+router.delete('/deletar/:id', FilmeController.deletar)
 
 module.exports = router;

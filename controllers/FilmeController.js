@@ -38,7 +38,6 @@ var FilmeController = {
 
     home: async (req, res) => {
         const result = await Filme.findAll();
-        console.log(result);
         return res.render('filme/home', {result})
     },
 
@@ -49,7 +48,6 @@ var FilmeController = {
 
     guardar: async (req, res) => {
         const dados = req.body;
-        console.log("DADOS", dados);
         const result = await Filme.create(dados);
         return res.redirect('/filmes/');
     },
@@ -64,8 +62,13 @@ var FilmeController = {
     atualizar: async (req, res) => {
         const { id } = req.params;
         const dados = req.body;
-        console.log("DADOS", dados);
         const result = await Filme.update(dados, {where: {id}});
+        return res.redirect('/filmes/');
+    },
+
+    deletar: async (req, res) => {
+        const { id } =req.params;
+        const result = await Filme.destroy({where:{id}});
         return res.redirect('/filmes/');
     }
 }
