@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var filmesRouter = require('./routes/filmes');
 var generoRouter = require('./routes/generos');
+var serieRouter = require('./routes/series');
 
 var app = express();
 
@@ -26,7 +27,8 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/filmes', filmesRouter);
-app.use('/generos', generoRouter)
+app.use('/generos', generoRouter);
+app.use('/series', serieRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -17,19 +17,19 @@ var GeneroController = {
     guardar: async (req, res) => {
         const dados = req.body;
         const result = await Genero.create(dados);
-        return res.redirect('/genero/');
+        return res.redirect('/generos/');
     },
 
     edit: async (req, res) => {
         const { id } = req.params;
         const genero = await Genero.findByPk(id);
-        return res.render('genero/edit', {generos, Genero})
+        return res.render('genero/edit', {genero})
     },
 
     atualizar: async (req, res) => {
         const { id } = req.params;
         const dados = req.body;
-        const result = await Genero.update(dados, {where: {id}});
+        const result = await Genero.update(dados, {where:{id}});
         return res.redirect('/generos/');
     },
 
