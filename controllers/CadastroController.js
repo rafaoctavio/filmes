@@ -1,4 +1,4 @@
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 // const {usuario} = require ('../models');
 const CadastroController = {
     index: (req, res) => {
