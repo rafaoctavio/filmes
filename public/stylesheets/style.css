@@ -1,5 +1,6 @@
-body{
-  font-family: 'Montserrat', sans-serif;
+body {
+  font-family: 'JetBrains Mono', monospace;
+
 }
 
 .navbar-light .navbar-brand {
@@ -8,4 +9,14 @@ body{
 
 .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.card-pricing.popular {
+  z-index: 1;
+  border: 3px solid #007bff;
+}
+
+.card-pricing .list-unstyled li {
+  padding: .5rem 0;
+  color: #6c757d;
 }

@@ -1,6 +1,5 @@
-// const config = require('./../config/database');
 const { Serie, Genero } = require('../models')
-var SerieController = {
+const SerieController = {
     
     home: async (req, res) => {
         const result = await Serie.findAll();
