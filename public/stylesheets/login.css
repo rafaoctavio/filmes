@@ -2,6 +2,7 @@ body{
     padding-top:4.2rem;
     padding-bottom:4.2rem;
     background:rgba(0, 0, 0, 0.76);
+    font-family: 'JetBrains Mono', monospace;
     }
     a{
      text-decoration:none !important;
@@ -29,7 +30,7 @@ body{
      text-transform:uppercase;
      }
      .mybtn{
-     border-radius:50px;
+     border-radius:0px;
      }
     
      .login-or {

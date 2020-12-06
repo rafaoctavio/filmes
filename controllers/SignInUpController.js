@@ -1,27 +1,30 @@
-// const { usuario } = require('./../models');
-// const bcrypt = require('bcrypt');
+const { user } = require('./../models');
+const bcrypt = require('bcrypt');
 
 const SignInUpController = {
     index: (req, res) => {
-        return res.render("login");
+        const {user} = req.session;
+        return res.render("login", {user});
     },
+
     doLogin: async (req, res) => {
-        const { username, password, remember } = req.body
-        const user = await usuario.findOne({ where: { email: username } });
-        // const salt = bcrypt.genSaltSync(10);
+        const { email, senha, remember } = req.body
+        const usuario = await user.findOne({ where: { email } });
 
-        if(!user) {
-            return res.status(401).render('cadastro');
+        if(!usuario) {
+            return res.status(401).redirect('/login');
         }
-        // const senhaValida = bcrypt.compareSync(password, user.senha);
+        const senhaValida = bcrypt.compareSync(senha, usuario.senha);
+        usuario.senha = undefined;
 
-        if(true) {
-            req.userId = user.id;
-            return res.redirect('/profile');
+        if(senhaValida) {
+            req.session.user = usuario;
+            req.session.user.admin = usuario.ehAdmin;
+            return res.redirect('/users');
         }
-        return res.status(401).render('cadastro');
+        return res.status(401).redirect('/login');
     }
 }
 
-
 module.exports = SignInUpController;
+

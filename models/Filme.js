@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
         genero_id: {
             type: DataTypes.INTEGER,
             unsigned: true
-        }
+        },
+        estaAlugado: DataTypes.BOOLEAN,
+        
     },{timestamps: false, tableName: "filmes"}); // created_at e updated_at
     return Filme;
 }

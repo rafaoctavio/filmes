@@ -26,11 +26,14 @@
                 <td><%= item.id %></td>
                 <td><%= item.titulo %></td>
                 <td><%= item.avaliacao %></td>
+                <td><%= item.estaAlugado %> </td>
                 <td><%= item.genero_id %></td>
                 <td>
                     <form action="/filmes/deletar/<%= item.id %>?_method=DELETE" method="POST">
                     <a type="button" class="btn btn-primary" href="/filmes/<%= item.id %>">Editar</a>
                     <button type="submit" class="btn btn-danger">Deletar</button>
+                    <button type="submit" class="btn btn-warning">Alugar</button>
+                    <button type="submit" class="btn btn-info">Devolver</button>
                     </form>
                 </td>
             </tr>            

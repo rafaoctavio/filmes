@@ -62,14 +62,20 @@ var FilmeController = {
     atualizar: async (req, res) => {
         const { id } = req.params;
         const dados = req.body;
-        const result = await Filme.update(dados, {where: {id}});
+        const result = await Filme.update(dados, { where: { id } });
         return res.redirect('/filmes/');
     },
 
     deletar: async (req, res) => {
         const { id } =req.params;
-        const result = await Filme.destroy({where:{id}});
+        const result = await Filme.destroy({ where:{ id } });
         return res.redirect('/filmes/');
+    },
+
+    alugar: async (req, res) => {
+        const { id } = req.params;
+        const filme = await Filme.findByPk(id);
+        return res.render('filme/alugar', { filme })
     }
 }
 
