@@ -10,7 +10,6 @@ var filmesRouter = require('./routes/filmes');
 var generoRouter = require('./routes/generos');
 var loginRouter = require('./routes/login');
 
-
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -24,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/users', usersRouter);
 app.use('/filmes', filmesRouter);
 app.use('/generos', generoRouter);
 app.use('/login', loginRouter);
