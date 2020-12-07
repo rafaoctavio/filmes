@@ -4,7 +4,20 @@ body {
 
 }
 
-.navbar-light .navbar-brand {
+.navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  margin: auto;
+}
+.navbar-toggle {
+  z-index:3;
+}
+
+.navbar-light {
   color: rgba(255, 255, 255, 0.9);
 }
 

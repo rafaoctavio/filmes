@@ -1,51 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>LocadoRafa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="icon" type="image" sizes="96x96" href="/images/favicon.png">
+  <title>LocadoRafa</title>
 </head>
+
 <body>
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark ml-auto ml-md-0">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/"><img class="img-responsive" src="/images/logo.png" width="50" height="auto" alt="" /></a>
     </nav>
-    </header>
-    
-    <%- include('./partials/sidebar-adm')%>
-    
-    <main class="page-content">
-      <div class="container-fluid">
-        <h2>Bem vindo!</h2>
-        <hr>
-        <div class="row">
-          <div class="form-group col-md-12">
-            <p>Utilize o menu ao lado para navegar.</p>
-            <br>
-            <p>Escolha seu filme e clique em <span class="badge badge-warning"> Alugar</span>. Caso deseje devolver o filme, clique em  <span class="badge badge-info"> Devolver</span> .</p>
-          </div>
+  </header>
 
-          <div class="form-group col-md-12">
-          <img class="img-responsive"src="/images/filme_fundo.png"width="600" height="auto" alt=""/>
-          </div>
-          </div>
-          </div>
+  <%- include('./partials/sidebar-adm')%>
 
+  <main class="page-content">
+    <div class="container-fluid">
+      <h2>Bem vindo!</h2>
+      <hr>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <p>Utilize o menu ao lado para navegar.</p>
+          <br>
+          <p>Escolha seu filme e clique em <span class="badge badge-warning"> Alugar</span>. Caso deseje devolver o
+            filme, clique em <span class="badge badge-info"> Devolver</span> .</p>
+        </div>
+
+        <div class="text-center">
+          <img src="/images/filme_fundo.png" class="img-fluid" alt="imagem alegre de filmes">
+        </div>
       </div>
-    </main>
-    <!-- page-content" -->
+    </div>
+    </div>
+  </main>
   </div>
-  
-   
-    
-    <%- include('./partials/footer')%>
 
-<script src="/javascripts/jquery.min.js"></script>
-<script src="/javascripts/scriptUser.js"></script>
-<script src="/javascripts/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/b5ed3fff72.js" crossorigin="anonymous"></script>
+
+
+  <%- include('./partials/footer')%>
+
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/scriptUser.js"></script>
+  <script src="/javascripts/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/b5ed3fff72.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
