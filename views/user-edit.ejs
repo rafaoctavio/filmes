@@ -26,12 +26,33 @@
       <h2>Bem vindo! <%= user.nome %></h2>
       <hr>
       <div class="row">
-        <div class="form-group col-md-12">
-          <p>Utilize o menu ao lado para navegar.</p>
-          <br>
-          <p>Escolha seu filme e clique em <span class="badge badge-warning"> Alugar</span>. Caso deseje devolver o
-            filme, clique em <span class="badge badge-info"> Devolver</span> .</p>
-        </div>
+        <form class= "mt-5 ml-5 mr-5"action="/users/edit<%= user.id %>?_method=PUT" method="POST">
+
+          <div class="form-group row">
+              <label for="inputTitulo" class="col-sm-2 col-form-label">Nome</label>
+              <div class="col-sm-10">
+                <input name="nome"type="text" class="form-control" id="" value="<%= user.nome %>"/>
+              </div>
+            </div>
+      
+            <div class="form-group row">
+              <label for="inputAvaliacao" class="col-sm-2 col-form-label">E-mail</label>
+              <div class="col-sm-10">
+                <input name="email" type="email" class="form-control" id="" value="<%= user.email %>"/>
+              </div>
+            </div>
+      
+            <div class="form-group row">
+              <label for="inputPremios" class="col-sm-2 col-form-label">Senha</label>
+              <div class="col-sm-10">
+                <input name="senha" type="password" class="form-control" id="" value="<%= user.senha %>"/>
+              </div>
+            </div>
+
+            <div class="text-center mb-3">
+              <button type="submit" class="btn btn-success">Salvar</button>
+            </div>    
+        </form>
 
         <div class="text-center">
           <img src="/images/filme_fundo.png" class="img-fluid" alt="imagem alegre de filmes">
