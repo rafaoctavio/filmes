@@ -5,7 +5,7 @@
     <nav id="sidebar" class="sidebar-wrapper">
       <div class="sidebar-content">
         <div class="sidebar-brand">
-          <a href="#"><img src="/images/logo.png" width="30" height="30" alt=""> LOCADORAFA</a></a>
+          <a href="./users"><img src="/images/logo.png" width="30" height="30" alt=""> LOCADORAFA</a></a>
           <div id="close-sidebar">
             <i class="fas fa-times"></i>
           </div>
@@ -19,7 +19,7 @@
             <span class="user-name"><strong><%= user.nome %></strong>
             </span>
             <span class="user-role">Administrador</span>        
-            <a href="user-edit">
+            <a href="../users/edit">
               <i class="fa fa-cog"></i>
             </a>
             <a href="#">
@@ -43,7 +43,7 @@
                     <a href="/filmes">Todos os Filmes</a>
                   </li>
                   <li>
-                    <a href="/filme/criar">Adicionar Filme</a>
+                    <a href="/filmes/criar">Adicionar Filme</a>
                   </li>
                 </ul>
               </div>
@@ -67,7 +67,7 @@
               </div>
             </li>
             <li class="sidebar-menu">
-              <a href="#">
+              <a href="/users/listar">
                 <i class="fas fa-users"></i>
                 <span>Usuários</span>
               </a>

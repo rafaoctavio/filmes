@@ -5,4 +5,10 @@ const UserController = require("../controllers/UserController");
 
 router.get ('/', UserController.index);
 
+router.get ('/listar', UserController.listar);
+
+router.get ('/edit', UserController.edit);
+
+router.put ('/:id', UserController.atualizar);
+
 module.exports = router;

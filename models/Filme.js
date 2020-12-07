@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             unsigned: true
         },
-        estaAlugado: DataTypes.BOOLEAN,
+        esta_alugado: DataTypes.BOOLEAN,
         
     },{timestamps: false, tableName: "filmes"}); // created_at e updated_at
     return Filme;

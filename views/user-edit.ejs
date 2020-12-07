@@ -23,7 +23,7 @@
 
   <main class="page-content">
     <div class="container-fluid">
-      <h2>Bem vindo! <%= user.nome %></h2>
+      <h2>Edite seus dados</h2>
       <hr>
       <div class="row">
         <form class= "mt-5 ml-5 mr-5"action="/users/edit<%= user.id %>?_method=PUT" method="POST">
@@ -54,9 +54,6 @@
             </div>    
         </form>
 
-        <div class="text-center">
-          <img src="/images/filme_fundo.png" class="img-fluid" alt="imagem alegre de filmes">
-        </div>
       </div>
     </div>
     </div>

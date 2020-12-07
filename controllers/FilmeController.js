@@ -1,5 +1,5 @@
 const config = require('./../config/database');
-const { Filme, Genero } = require('../models')
+const { Filme, Genero, User } = require('../models')
 var FilmeController = {
     exemplo: async (req, res) => {
         // const db = new Sequelize(config);
@@ -37,13 +37,15 @@ var FilmeController = {
     },
 
     home: async (req, res) => {
+        const {user} = req.session;
         const result = await Filme.findAll();
-        return res.render('filme/home', {result})
+        return res.render('filme/home', {result, user})
     },
 
     criar: async (req, res) => {
+        const {user} = req.session;
         const generos = await Genero.findAll();
-        return res.render('filme/criar', {generos})
+        return res.render('filme/criar', {generos, user})
     },
 
     guardar: async (req, res) => {
@@ -53,10 +55,11 @@ var FilmeController = {
     },
 
     edit: async (req, res) => {
+        const {user} = req.session;
         const { id } = req.params;
         const filme = await Filme.findByPk(id);
         const generos = await Genero.findAll();
-        return res.render('filme/edit', {generos, filme})
+        return res.render('filme/edit', {generos, filme, user})
     },
 
     atualizar: async (req, res) => {
