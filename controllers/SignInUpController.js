@@ -23,6 +23,11 @@ const SignInUpController = {
             return res.redirect('/users');
         }
         return res.status(401).redirect('/login');
+    },
+    logout: async (req, res) => {
+        req.session.destroy(function(err) {
+            return res.redirect('login');
+         })
     }
 }
 

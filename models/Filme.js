@@ -1,5 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Filme = sequelize.define("Filme",{
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+
+        },
         titulo: {
             type: DataTypes.STRING,
             allowNull: false
@@ -25,7 +31,15 @@ module.exports = (sequelize, DataTypes) => {
             unsigned: true
         },
         esta_alugado: DataTypes.BOOLEAN,
+        id_user:DataTypes.INTEGER
         
-    },{timestamps: false, tableName: "filmes"}); // created_at e updated_at
+    },{timestamps: false, tableName: "filmes"});
+    
+    Filme.associate = (models) => {
+       Filme.hasOne(models.user, {foreignKey: 'id', as: 'user'});
+       Filme.belongsTo(models.Genero, {foreignKey: 'genero_id',targetKey:'id',name: 'id', as: 'generos'});
+    }
+
+   
     return Filme;
 }

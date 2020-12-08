@@ -13,6 +13,8 @@ router.get('/:id', FilmeController.edit)
 
 router.put('/:id', FilmeController.atualizar)
 
+router.put('/alugar/:id', FilmeController.alugar)
+
 router.delete('/deletar/:id', FilmeController.deletar)
 
 module.exports = router;

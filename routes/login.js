@@ -9,4 +9,6 @@ router.post('/', SignInUpController.doLogin);
 
 router.post('/cadastro', CadastroController.criar);
 
+router.get('/logout', SignInUpController.logout);
+
 module.exports = router;

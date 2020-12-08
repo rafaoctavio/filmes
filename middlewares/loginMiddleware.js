@@ -1,10 +1,10 @@
 function loggedUser(req, res, next) {
-req.session.user ={
-  id: 2,
-  nome: 'Rafael Carvalho',
-  email: 'rafaoctavio@gmail.com',
-  ehAdmin: false
-}
+// req.session.user ={
+//   id: 2,
+//   nome: 'Rafael Carvalho',
+//   email: 'rafaoctavio@gmail.com',
+//   ehAdmin: true
+// }
   if(!req.session.user) {
     return res.status(500).redirect('/login');
   }
