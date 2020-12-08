@@ -1,5 +1,5 @@
 const config = require('./../config/database');
-const { User } = require('../models')
+const { User } = require('../models');
 const UserController = {
     index: (req, res) => {
         const {user} = req.session;
@@ -14,7 +14,7 @@ const UserController = {
     listar: async (req, res) => {
         const {user} = req.session;
         const result = await User.findAll();
-        return res.render('user-list', {result, user})
+        return res.render('user-list', { result, user })
     },
     atualizar: async (req, res) => {
         const { id } = req.params;
