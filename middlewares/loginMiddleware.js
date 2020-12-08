@@ -3,7 +3,7 @@ req.session.user ={
   id: 2,
   nome: 'Rafael Carvalho',
   email: 'rafaoctavio@gmail.com',
-  ehAdmin: null
+  ehAdmin: false
 }
   if(!req.session.user) {
     return res.status(500).redirect('/login');
