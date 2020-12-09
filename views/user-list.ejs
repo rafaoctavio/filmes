@@ -27,6 +27,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
+            <th></th>
 
         </tr>
         <% result.forEach((item) => { %>
@@ -37,7 +38,7 @@
             <td><%= item.email %></td>
             <td>
                 <form action="/users/deletar/<%= item.id %>?_method=DELETE" method="POST">
-                    <a type="button" class="btn btn-primary" href="/users/<%= item.id %>">Editar</a>
+                    
                     <button type="submit" class="btn btn-danger">Deletar</button>
                 </form>
             </td>

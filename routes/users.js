@@ -11,6 +11,8 @@ router.get ('/edit', UserController.edit);
 
 router.put ('/:id', UserController.atualizar);
 
-router.get ('/filmes', UserController.filmes)
+router.get ('/filmes', UserController.filmes);
+
+router.delete('/deletar/:id', UserController.deletar);
 
 module.exports = router;

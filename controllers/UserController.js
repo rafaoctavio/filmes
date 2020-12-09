@@ -2,17 +2,19 @@ const config = require('./../config/database');
 const { user, Filme } = require('../models');
 const UserController = {
     index: (req, res) => {
-        const {user} = req.session;
-        return res.render('user', { user });
+        const usuario = req.session.user;
+        return res.render('user', { user:usuario });
     },
-    edit: (req, res) => {
-        const {user} = req.session;
-        return res.render('user-edit', { user });
+    edit: async (req, res) => {
+        const usuario= req.session.user;
+        const { id } = req.params;
+        const result = await user.findByPk(id);
+        return res.render('user-edit', { result, user:usuario });
     },
     listar: async (req, res) => {
-        const {user} = req.session;
+        const usuario= req.session.user;
         const result = await user.findAll();
-        return res.render('user-list', { result, user })
+        return res.render('user-list', { result, user:usuario });
     },
     atualizar: async (req, res) => {
         const { id } = req.params;
@@ -22,9 +24,14 @@ const UserController = {
     },
     filmes: async (req, res) => {
         const usuario = req.session.user;
-        const result = await user.findOne({where: { id:usuario.id }, include: 'filmes'})
-        return res.render('user-alugados', { result, user:usuario })
-    }
+        const result = await user.findOne({where: { id:usuario.id }, include: 'filmes'});
+        return res.render('user-alugados', { result, user:usuario });
+    },
+    deletar: async (req, res) => {
+        const { id } =req.params;
+        const result = await user.destroy({ where:{ id } });
+        return res.redirect('/filmes/');
+    },
 
 };
 

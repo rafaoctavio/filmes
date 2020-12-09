@@ -26,7 +26,7 @@ const SignInUpController = {
     },
     logout: async (req, res) => {
         req.session.destroy(function(err) {
-            return res.redirect('login');
+            return res.redirect('/login');
          })
     }
 }

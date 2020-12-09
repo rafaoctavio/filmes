@@ -23,7 +23,7 @@
 
     <main class="page-content">
         <div class="container-fluid">
-            <% if (result.filmes.lenght>0) {%>
+            <% if (result.filmes.length>0) {%>
             <table class="table table-striped table-responsive-stack" id="tableOne">
                 <tr>
                     <th scope="col">ID</th>
@@ -38,7 +38,7 @@
                     <td><%= item.id %></td>
                     <td><%= item.titulo %></td>
                     <td><%= item.avaliacao %></td>
-                    <% if (item.esta_alugado=== true) { %>
+                    <% if (item.esta_alugado === true) { %>
                     <td><span class="badge badge-warning">Alugado</span></td>
                    <% } else { %>
                     <td><span class="badge badge-success">Disponível</span></td> 
@@ -46,7 +46,7 @@
                     
                     <td><%= item.genero_id %></td>
                     
-                    <% if (user.ehAdmin ===true) { %>
+                    <% if (user.ehAdmin === true) { %>
                         <td>
                         <form action="/filmes/deletar/<%= item.id %>?_method=DELETE" method="POST">
                             <a type="button" class="btn btn-primary" href="/filmes/<%= item.id %>"><i class="far fa-edit"></i> Editar</a>
