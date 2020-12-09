@@ -3,12 +3,10 @@ const { user, Filme } = require('../models');
 const UserController = {
     index: (req, res) => {
         const {user} = req.session;
-
         return res.render('user', { user });
     },
     edit: (req, res) => {
         const {user} = req.session;
-
         return res.render('user-edit', { user });
     },
     listar: async (req, res) => {

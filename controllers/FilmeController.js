@@ -5,7 +5,6 @@ var FilmeController = {
     home: async (req, res) => {
         const {user} = req.session;
         const result = await Filme.findAll({include:'generos'});
-        // console.log(result)
         return res.render('filme/home', {result, user})
     },
 
