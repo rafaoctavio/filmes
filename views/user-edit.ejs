@@ -27,7 +27,7 @@
       <h2>Edite seus dados</h2>
       <hr>
       <div class="row">
-        <form class="mt-5 ml-5 mr-5" action="/users/edit<%= user.id %>?_method=PUT" method="POST">
+        <form class="mt-5 ml-5 mr-5" action="/users/<%= user.id %>?_method=PUT" method="POST">
 
           <div class="form-group row">
             <label for="inputTitulo" class="col-sm-2 col-form-label">Nome</label>
@@ -46,7 +46,7 @@
           <div class="form-group row">
             <label for="inputPremios" class="col-sm-2 col-form-label">Senha</label>
             <div class="col-sm-10">
-              <input name="senha" type="password" class="form-control" id="" value="<%= user.senha %>" />
+              <input name="senha" type="password" class="form-control" id=""/>
             </div>
           </div>
 

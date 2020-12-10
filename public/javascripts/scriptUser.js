@@ -15,7 +15,7 @@ jQuery(function ($) {
       $(".sidebar-dropdown").removeClass("active");
       $(this)
         .next(".sidebar-submenu")
-        .slideDown(200);
+        .slideDown(300);
       $(this)
         .parent()
         .addClass("active");

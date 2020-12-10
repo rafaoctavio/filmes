@@ -1,5 +1,7 @@
 const config = require('./../config/database');
 const { user, Filme } = require('../models');
+const bcrypt = require('bcrypt');
+
 const UserController = {
     index: (req, res) => {
         const usuario = req.session.user;
@@ -19,8 +21,11 @@ const UserController = {
     atualizar: async (req, res) => {
         const { id } = req.params;
         const dados = req.body;
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(dados.senha, salt);
+        dados.senha = hash;
         const result = await user.update(dados, { where: { id } });
-        return res.redirect('user');
+        return res.redirect('/users');
     },
     filmes: async (req, res) => {
         const usuario = req.session.user;
@@ -30,7 +35,7 @@ const UserController = {
     deletar: async (req, res) => {
         const { id } =req.params;
         const result = await user.destroy({ where:{ id } });
-        return res.redirect('/filmes/');
+        return res.redirect('/users/listar');
     },
 
 };
