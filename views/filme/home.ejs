@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark ml-auto ml-md-0">
-            <a class="navbar-brand" href="/"><img class="img-responsive" src="/images/logo.png" width="50"
+            <a class="navbar-brand" href="/users"><img class="img-responsive" src="/images/logo.png" width="50"
                     height="ml-auto" alt="" /></a>
         </nav>
     </header>
@@ -39,36 +39,39 @@
                     <td><%= item.avaliacao %></td>
                     <% if (item.esta_alugado=== true) { %>
                     <td><span class="badge badge-warning">Alugado</span></td>
-                   <% } else { %>
-                    <td><span class="badge badge-success">Disponível</span></td> 
-                    <% } %> 
-                    
-                    <td><%= item.generos.nome %></td>
-                    
-                    <% if (user.ehAdmin === true) { %>
-                        <td>
-                        <form action="/filmes/deletar/<%= item.id %>?_method=DELETE" method="POST">
-                            <a type="button" class="btn btn-primary" href="/filmes/<%= item.id %>"><i class="far fa-edit"></i> Editar</a>
-                            <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i> Deletar</button>
-                            </form>
-                        </td>
-                        <% } else { %>
-                        <td>
-                        <form action="/filmes/alugar/<%= item.id %>?_method=PUT" method="POST"> 
-                            <% if (item.esta_alugado=== false || item.esta_alugado == null) { %>
-                            <button type="submit" class="btn btn-warning"><i class="fas fa-hand-lizard"></i> Alugar</button>
-                        <% } else { %>
-                            <button type="submit" class="btn btn-info"><i class="fas fa-undo"></i> Devolver</button>
-                        <% } %> 
-                        </form>                   
-                        </td> 
+                    <% } else { %>
+                    <td><span class="badge badge-success">Disponível</span></td>
+                    <% } %>
 
-                    <% } %>        
+                    <td><%= item.generos.nome %></td>
+
+                    <% if (user.ehAdmin === true) { %>
+                    <td>
+                        <form action="/filmes/deletar/<%= item.id %>?_method=DELETE" method="POST">
+                            <a type="button" class="btn btn-primary" href="/filmes/<%= item.id %>"><i
+                                    class="far fa-edit"></i> Editar</a>
+                            <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                                Deletar</button>
+                        </form>
+                    </td>
+                    <% } else { %>
+                    <td>
+                        <form action="/filmes/alugar/<%= item.id %>?_method=PUT" method="POST">
+                            <% if (item.esta_alugado === false || item.esta_alugado == null) { %>
+                            <button type="submit" class="btn btn-warning"><i class="fas fa-hand-lizard"></i>
+                                Alugar</button>
+                            <% } else { %>
+                            <button type="submit" class="btn btn-info"><i class="fas fa-undo"></i> Devolver</button>
+                            <% } %>
+                        </form>
+                    </td>
+
+                    <% } %>
                 </tr>
-                
+
                 <% }) %>
 
-            </table> 
+            </table>
         </div>
     </main>
 

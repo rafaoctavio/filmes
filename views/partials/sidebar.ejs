@@ -1,6 +1,88 @@
 <% if (user.ehAdmin=== true ) { %>
 
 <div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="./users"><img src="/images/logo.png" width="30" height="30" alt=""> LOCADORAFA</a></a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded"
+            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name"><strong><%= user.nome %></strong>
+          </span>
+          <span class="user-role">Administrador</span>
+          <a href="../users/edit">
+            <i class="fa fa-cog"></i>
+          </a>
+          <a href="/login/logout">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>Menu</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fas fa-film"></i>
+              <span>Filmes</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/filmes">Todos os Filmes</a>
+                </li>
+                <li>
+                  <a href="/filmes/criar">Adicionar Filme</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fas fa-align-left"></i>
+              <span>Gênero</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/generos">Todos os Gêneros
+                  </a>
+                </li>
+                <li>
+                  <a href="/generos/criar">Adicionar Gêneros
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-menu">
+            <a href="/users/listar">
+              <i class="fas fa-users"></i>
+              <span>Usuários</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% } else { %>
+
+  <div class="page-wrapper chiller-theme toggled">
     <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
       <i class="fas fa-bars"></i>
     </a>
@@ -14,94 +96,14 @@
         </div>
         <div class="sidebar-header">
           <div class="user-pic">
-            <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            <img class="img-responsive img-rounded"
+              src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
               alt="User picture">
           </div>
           <div class="user-info">
             <span class="user-name"><strong><%= user.nome %></strong>
             </span>
-            <span class="user-role">Administrador</span>        
-            <a href="../users/edit">
-              <i class="fa fa-cog"></i>
-            </a>
-            <a href="/login/logout">
-              <i class="fa fa-power-off"></i>
-            </a>
-          </div>
-        </div>
-        <div class="sidebar-menu">
-          <ul>
-            <li class="header-menu">
-              <span>Menu</span>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="fas fa-film"></i>
-                <span>Filmes</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="/filmes">Todos os Filmes</a>
-                  </li>
-                  <li>
-                    <a href="/filmes/criar">Adicionar Filme</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="fas fa-align-left"></i>
-                <span>Gênero</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="/generos">Todos os Gêneros
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/generos/criar">Adicionar Gêneros
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidebar-menu">
-              <a href="/users/listar">
-                <i class="fas fa-users"></i>
-                <span>Usuários</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div> 
-    </nav>
-
-<% } else { %>
-
-  <div class="page-wrapper chiller-theme toggled">
-    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-      <i class="fas fa-bars"></i>
-    </a>
-    <nav id="sidebar" class="sidebar-wrapper">
-      <div class="sidebar-content">
-        <div class="sidebar-brand">
-          <a href="#"><img src="/images/logo.png" width="30" height="30" alt=""> LOCADORAFA</a></a>
-          <div id="close-sidebar">
-            <i class="fas fa-times"></i>
-          </div>
-        </div>
-        <div class="sidebar-header">
-          <div class="user-pic">
-            <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-              alt="User picture">
-          </div>
-          <div class="user-info">
-            <span class="user-name"><strong><%= user.nome %></strong>
-            </span>
-            <span class="user-role">Entusiasta</span>        
+            <span class="user-role">Entusiasta</span>
             <a href="../users/edit">
               <i class="fa fa-cog"></i>
             </a>
@@ -128,7 +130,6 @@
               </a>
           </ul>
         </div>
-      </div> 
+      </div>
     </nav>
-<% } %> 
-
+    <% } %>

@@ -40,39 +40,57 @@
                     <td><%= item.avaliacao %></td>
                     <% if (item.esta_alugado === true) { %>
                     <td><span class="badge badge-warning">Alugado</span></td>
-                   <% } else { %>
-                    <td><span class="badge badge-success">Disponível</span></td> 
-                    <% } %> 
-                    
-                    <td><%= item.genero_id %></td>
-                    
-                    <% if (user.ehAdmin === true) { %>
-                        <td>
-                        <form action="/filmes/deletar/<%= item.id %>?_method=DELETE" method="POST">
-                            <a type="button" class="btn btn-primary" href="/filmes/<%= item.id %>"><i class="far fa-edit"></i> Editar</a>
-                            <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i> Deletar</button>
-                            </form>
-                        </td>
-                        <% } else { %>
-                        <td>
-                        <form action="/filmes/alugar/<%= item.id %>?_method=PUT" method="POST"> 
-                            <% if (item.esta_alugado=== false || item.esta_alugado == null) { %>
-                            <button type="submit" class="btn btn-warning"><i class="fas fa-hand-lizard"></i> Alugar</button>
-                        <% } else { %>
-                            <button type="submit" class="btn btn-info"><i class="fas fa-undo"></i> Devolver</button>
-                        <% } %> 
-                        </form>                   
-                        </td> 
+                    <% } else { %>
+                    <td><span class="badge badge-success">Disponível</span></td>
+                    <% } %>
 
-                    <% } %>        
+                    <td><%= item.genero_id %></td>
+
+                    <% if (user.ehAdmin === true) { %>
+                    <td>
+                        <form action="/filmes/deletar/<%= item.id %>?_method=DELETE" method="POST">
+                            <a type="button" class="btn btn-primary" href="/filmes/<%= item.id %>"><i
+                                    class="far fa-edit"></i> Editar</a>
+                            <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                                Deletar</button>
+                        </form>
+                    </td>
+                    <% } else { %>
+                    <td>
+                        <form action="/filmes/alugar/<%= item.id %>?_method=PUT" method="POST">
+                            <% if (item.esta_alugado=== false || item.esta_alugado == null) { %>
+                            <button type="submit" class="btn btn-warning"><i class="fas fa-hand-lizard"></i>
+                                Alugar</button>
+                            <% } else { %>
+                            <button type="submit" class="btn btn-info"><i class="fas fa-undo"></i> Devolver</button>
+                            <% } %>
+                        </form>
+                    </td>
+
+                    <% } %>
                 </tr>
-                
+
                 <% }) %>
 
             </table>
-        <% } else { %>
-            <h1>Você não tem Filmes alugados!</h1>
-        <% } %> 
+            <% } else { %>
+
+            <h2>Você não tem Filmes alugados!</h2>
+            <hr>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <p>Utilize o menu ao lado para navegar.</p>
+                    <br>
+                    <p>Escolha seu filme e clique em <span class="badge badge-warning"> Alugar</span>. Caso deseje
+                        devolver o
+                        filme, clique em <span class="badge badge-info"> Devolver</span>.</p>
+                </div>
+
+                <div class="text-center">
+                    <img src="/images/filme_fundo.png" class="img-fluid" alt="imagem alegre de filmes">
+                </div>
+            </div>
+            <% } %>
         </div>
     </main>
 
