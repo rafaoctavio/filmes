@@ -1,7 +1,7 @@
 body{
     padding-top:4.2rem;
     padding-bottom:4.2rem;
-    background:rgba(0, 0, 0, 0.76);
+    background:#343a40;
     font-family: 'JetBrains Mono', monospace;
     }
     a{
@@ -29,7 +29,7 @@ body{
      .tx-tfm{
      text-transform:uppercase;
      }
-     .mybtn{
+     .meubtn{
      border-radius:0px;
      }
     
@@ -56,14 +56,7 @@ body{
      margin-top: 0px !important;
      margin-bottom: 0px !important;
      }
-     .google {
-     color:#666;
-     width:100%;
-     height:40px;
-     text-align:center;
-     outline:none;
-     border: 1px solid lightgrey;
-     }
+  
       form .error {
      color: #ff0000;
      }
